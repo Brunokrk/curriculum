@@ -29,7 +29,7 @@ class Header extends StatelessWidget {
                   borderColor: Colors.white,
                 ),
                 const SizedBox(height: 24),
-                Text(
+                SelectableText(
                   l10n.headerGreeting,
                   style: Theme.of(context)
                       .textTheme
@@ -42,7 +42,7 @@ class Header extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),
-                Text(
+                SelectableText(
                   l10n.headerName,
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
                     color: CustomTheme.secondaryColor, 
@@ -53,7 +53,7 @@ class Header extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 12),
-                Text(
+                SelectableText(
                   l10n.headerTitle,
                   style: Theme.of(context).textTheme.displayMedium?.copyWith(
                     color: CustomTheme.secondaryColor.withOpacity(0.9), 
@@ -85,7 +85,7 @@ class Header extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
+                      SelectableText(
                         l10n.headerGreeting,
                         style: Theme.of(context)
                             .textTheme
@@ -97,7 +97,7 @@ class Header extends StatelessWidget {
                             ),
                       ),
                       const SizedBox(height: 12),
-                      Text(
+                      SelectableText(
                         l10n.headerName,
                         style: Theme.of(context)
                             .textTheme
@@ -110,7 +110,7 @@ class Header extends StatelessWidget {
                             ),
                       ),
                       const SizedBox(height: 16),
-                      Text(
+                      SelectableText(
                         l10n.headerTitle,
                         style: Theme.of(context)
                             .textTheme

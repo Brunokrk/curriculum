@@ -132,7 +132,7 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Cargo e empresa
-                Text(
+                SelectableText(
                   _getLocalizedPosition(experience['position']!, l10n),
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
@@ -140,7 +140,7 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
+                SelectableText(
                   experience['company']!,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: CustomTheme.secondaryColor.withOpacity(0.8),
@@ -160,7 +160,7 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
 
   Widget _buildExpandableText(BuildContext context, String content, int index, bool isExpanded, bool needsReadMore, bool isMobile, AppLocalizations l10n) {
     if (!needsReadMore) {
-      return Text(
+      return SelectableText(
         content,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
           height: 1.6,
@@ -176,7 +176,7 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
       children: [
         Stack(
           children: [
-            Text(
+            SelectableText(
               displayText,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 height: 1.6,

@@ -50,7 +50,7 @@ class GenericSection extends StatelessWidget {
         crossAxisAlignment: contentAlignment,
         children: [
           //const SizedBox(height: 20),
-          Text(
+          SelectableText(
             title,
             style: Theme.of(context)
                 .textTheme
@@ -67,7 +67,7 @@ class GenericSection extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 15),
-          Text(
+          SelectableText(
             content,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -94,7 +94,7 @@ class GenericSection extends StatelessWidget {
         crossAxisAlignment: contentAlignment,
         children: [
           //const SizedBox(height: 20),
-          Text(
+          SelectableText(
             title,
             style: Theme.of(context)
                 .textTheme
@@ -116,7 +116,7 @@ class GenericSection extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 2,
-                  child: Text(
+                  child: SelectableText(
                     content,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       height: 1.6,
@@ -135,7 +135,7 @@ class GenericSection extends StatelessWidget {
               ],
             )
           else
-            Text(
+            SelectableText(
               content,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 height: 1.6,

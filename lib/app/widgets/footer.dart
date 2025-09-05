@@ -29,7 +29,7 @@ class Footer extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
+        SelectableText(
           l10n.developedBy,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: CustomTheme.primaryColor,
@@ -50,7 +50,7 @@ class Footer extends StatelessWidget {
       children: [
         Expanded(
           flex: 2,
-          child: Text(
+          child: SelectableText(
             l10n.developedBy,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               color: CustomTheme.primaryColor,
@@ -110,14 +110,14 @@ class Footer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
             children: [
-              Text(
+              SelectableText(
                 label,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: CustomTheme.primaryColor.withOpacity(0.7),
                   fontSize: 12,
                 ),
               ),
-              Text(
+              SelectableText(
                 value,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: CustomTheme.primaryColor,
