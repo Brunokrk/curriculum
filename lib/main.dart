@@ -5,9 +5,11 @@ import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/helpers/language_notifier.dart';
 import 'app/routes/app_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setUrlStrategy(PathUrlStrategy());
   runApp(const MyApp());
 }
 

@@ -19,7 +19,7 @@ class Header extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const PhotoBox(
-                  photo: 'images/dev_photo.jpg',
+                  photo: 'assets/images/dev_photo.jpg',
                   borderColor: Colors.white,
                 ),
                 const SizedBox(height: 20),
@@ -55,7 +55,7 @@ class Header extends StatelessWidget {
                   flex: 1,
                   child: Center(
                       child: const PhotoBox(
-                    photo: 'images/dev_photo.jpg',
+                    photo: 'assets/images/dev_photo.jpg',
                     borderColor: Colors.white,
                   )),
                 ),

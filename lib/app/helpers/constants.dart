@@ -10,13 +10,13 @@ class Constants {
       'company': 'BMPTec',
       'position': 'Desenvolvedor de Software Mobile Júnior',
       'content': 'Atuei no desenvolvimento de dois aplicativos white label comercializados para centenas de clientes, participando de todo o ciclo de desenvolvimento e manutenção.\n\nPrincipais atividades:\n• Desenvolvimento com arquitetura limpa, estruturada em camadas (Data, Domain, Presentation).\n• Identificação e correção de bugs em ambientes de desenvolvimento e produção.\n• Participação ativa em metodologias ágeis: refinamentos, code reviews, dailys e retrospectivas.\n• Gestão de múltiplos aplicativos nas lojas Google Play e App Store (modelo white label).\n• Contribuição em discussões técnicas e tomadas de decisão sobre arquitetura e padrões de desenvolvimento.\n\nResponsabilidades técnicas:\n• Uso de diferentes gerenciadores de estado, como GetX e Provider.\n• Implementação de arquitetura limpa (contratos, use cases, services, repositories, DTOs e models).\n• Criação e configuração de aplicativos no Firebase.\n• Integração com recursos nativos do sistema operacional (ex.: câmera).\n• Configuração de Push Notifications com Firebase.\n• Escrita de testes unitários.\n• Uso de pipelines para publicação de parceiros nas lojas e manutenção das mesmas.\n• Criação de scripts para automatização de processos manuais do time.',
-      'assetPath': 'images/bmptec.png',
+      'assetPath': 'assets/images/bmptec.png',
     },
     {
       'company': 'TOTVS S.A',
       'position': 'Estagiário em Desenvolvimento FullStack',
       'content': 'No contexto de uma equipe focada no mercado internacional, desempenhei um papel significativo na customização e criação de softwares para atender às necessidades específicas de clientes corporativos para o mercado internacional. Como o principal desenvolvedor da equipe no contexto de tecnologias Web, atuei em um projeto de grande envergadura voltado para a modernização tecnológica, que consistiu na transformação de programas desktop tradicionais em aplicações web sofisticadas e adaptadas para o mercado internacional.\n\nDurante esse período, aprimorei substancialmente minhas habilidades no uso dos frameworks Angular e AngularJS, aplicando linguagens de programação como TypeScript e HTML para desenvolver soluções robustas e eficientes.\n\nMinha experiência também incluiu o desenvolvimento de APIs utilizando a linguagem Progress4GL, o que facilitou a integração de bancos de dados ao novo ambiente web de forma eficiente. Adicionalmente, tive a oportunidade de explorar o PO-UI, um framework de interface gráfica proprietário da empresa, que também é disponibilizado para o uso público.\n\nEste conjunto de habilidades e experiências não só enriqueceu meu repertório técnico, mas também possibilitou uma contribuição significativa para a inovação em uma organização de grande porte, destacando a relevância e o impacto do meu trabalho.',
-      'assetPath': 'images/totvs.png',
+      'assetPath': 'assets/images/totvs.png',
     },
 
 

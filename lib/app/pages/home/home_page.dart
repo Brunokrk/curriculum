@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 key: _graduationKey,
                 title: l10n.graduation,
                 content: l10n.graduationContent,
-                photo: 'images/Marca_Udesc.jpg',
+                photo: 'assets/images/Marca_Udesc.jpg',
                 photoBorderColor: CustomTheme.secondaryColor,
                 photoWidth: 250,
                 contentAlignment: CrossAxisAlignment.center,
