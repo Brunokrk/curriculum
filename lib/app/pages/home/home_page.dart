@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:portfolio_webapp/app/pages/home/experiences_section.dart';
+import 'package:portfolio_webapp/app/widgets/experiences_section.dart';
+import 'package:portfolio_webapp/app/widgets/footer.dart';
 import 'package:portfolio_webapp/app/widgets/generic_section.dart';
 import 'package:portfolio_webapp/app/widgets/language_selector.dart';
 
@@ -16,7 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Chaves globais para cada seção
   final GlobalKey _headerKey = GlobalKey();
   final GlobalKey _aboutKey = GlobalKey();
   final GlobalKey _graduationKey = GlobalKey();
@@ -92,7 +92,8 @@ class _HomePageState extends State<HomePage> {
                 dividerEndIndent: 100,
               ),
               ExperiencesSection(key: _experiencesKey),
-              // TODO: Add other sections below
+
+              Footer(),
             ],
           ),
         ),

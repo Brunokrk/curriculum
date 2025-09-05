@@ -15,5 +15,13 @@
   "portuguese": "Português",
   "english": "English",
   "readMore": "Read more",
-  "readLess": "Read less"
+  "readLess": "Read less",
+  "headerGreeting": "Hi there, I'm",
+  "headerName": "BRUNO MARCHI PIRES",
+  "headerTitle": "Mobile Software Developer",
+  "developedBy": "Developed by Bruno Marchi Pires",
+  "phone": "Phone",
+  "email": "E-mail",
+  "phoneNumber": "(48) 99903-1154",
+  "emailAddress": "piresbrcomercial@gmail.com"
 }

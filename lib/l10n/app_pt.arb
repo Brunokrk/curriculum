@@ -63,5 +63,37 @@
   "readLess": "Ler menos",
   "@readLess": {
     "description": "Botão para contrair texto"
+  },
+  "headerGreeting": "Olá, eu sou",
+  "@headerGreeting": {
+    "description": "Saudação no header"
+  },
+  "headerName": "BRUNO MARCHI PIRES",
+  "@headerName": {
+    "description": "Nome completo no header"
+  },
+  "headerTitle": "Desenvolvedor de Software Mobile",
+  "@headerTitle": {
+    "description": "Título profissional no header"
+  },
+  "developedBy": "Desenvolvido por Bruno Marchi Pires",
+  "@developedBy": {
+    "description": "Texto de desenvolvimento no footer"
+  },
+  "phone": "Telefone",
+  "@phone": {
+    "description": "Label do telefone"
+  },
+  "email": "E-mail",
+  "@email": {
+    "description": "Label do e-mail"
+  },
+  "phoneNumber": "(48) 99903-1154",
+  "@phoneNumber": {
+    "description": "Número de telefone"
+  },
+  "emailAddress": "piresbrcomercial@gmail.com",
+  "@emailAddress": {
+    "description": "Endereço de e-mail"
   }
 }

@@ -18,8 +18,6 @@ class Constants {
       'content': 'No contexto de uma equipe focada no mercado internacional, desempenhei um papel significativo na customização e criação de softwares para atender às necessidades específicas de clientes corporativos para o mercado internacional. Como o principal desenvolvedor da equipe no contexto de tecnologias Web, atuei em um projeto de grande envergadura voltado para a modernização tecnológica, que consistiu na transformação de programas desktop tradicionais em aplicações web sofisticadas e adaptadas para o mercado internacional.\n\nDurante esse período, aprimorei substancialmente minhas habilidades no uso dos frameworks Angular e AngularJS, aplicando linguagens de programação como TypeScript e HTML para desenvolver soluções robustas e eficientes.\n\nMinha experiência também incluiu o desenvolvimento de APIs utilizando a linguagem Progress4GL, o que facilitou a integração de bancos de dados ao novo ambiente web de forma eficiente. Adicionalmente, tive a oportunidade de explorar o PO-UI, um framework de interface gráfica proprietário da empresa, que também é disponibilizado para o uso público.\n\nEste conjunto de habilidades e experiências não só enriqueceu meu repertório técnico, mas também possibilitou uma contribuição significativa para a inovação em uma organização de grande porte, destacando a relevância e o impacto do meu trabalho.',
       'assetPath': 'assets/images/totvs.png',
     },
-
-
   ];
 
 }
