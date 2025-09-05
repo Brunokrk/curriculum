@@ -73,6 +73,8 @@ flutter:
   assets:
       - assets/images/dev_photo.jpg
       - assets/images/Marca_Udesc.jpg
+      - assets/images/bmptec.png
+      - assets/images/totvs.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
