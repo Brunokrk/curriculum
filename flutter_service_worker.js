@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "b6a8f959247a210fe25b8cdc8cf87e94",
+const RESOURCES = {"flutter_bootstrap.js": "3df8f0c934448dd315724de6325f0299",
 "version.json": "47724c37669ff4be126ea937b39c9d45",
 "index.html": "c3933bfe26ddef9f492b526be9f7fc41",
 "/": "c3933bfe26ddef9f492b526be9f7fc41",
-"main.dart.js": "0c72f54da74ba946715b1180a24a3826",
+"main.dart.js": "2400b816452134e9f51b95fadf9cc080",
 "flutter.js": "76f08d47ff9f5715220992f993002504",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -22,7 +22,7 @@ const RESOURCES = {"flutter_bootstrap.js": "b6a8f959247a210fe25b8cdc8cf87e94",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "33b7d9392238c04c131b6ce224e13711",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/AssetManifest.bin": "1ea25fb495eac686df82f23b33a7adc5",
-"assets/fonts/MaterialIcons-Regular.otf": "91665b0371d6bc0ed98129d7593c73fe",
+"assets/fonts/MaterialIcons-Regular.otf": "f6a5322adf29504a08dde68412df742c",
 "assets/assets/images/Marca_Udesc.jpg": "7267ed0c4c87f9f9a7adf19b7872f505",
 "assets/assets/images/dev_photo.jpg": "9cee417e8858b57821e76864818abb71",
 "assets/assets/images/totvs.png": "ae9fa9de0510b92b0c81437ccadfc3a5",
