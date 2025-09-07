@@ -44,6 +44,7 @@ dependencies:
   intl: ^0.19.0
   shared_preferences: ^2.2.2
   provider: ^6.1.1
+  url_launcher: ^6.2.5
 
 
 dev_dependencies:
@@ -77,6 +78,8 @@ flutter:
       - assets/images/Marca_Udesc.jpg
       - assets/images/bmptec.png
       - assets/images/totvs.png
+      - assets/cv/curriculo_pt.pdf
+      - assets/cv/curriculo_en.pdf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

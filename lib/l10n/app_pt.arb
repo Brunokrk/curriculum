@@ -95,5 +95,17 @@
   "emailAddress": "piresbrcomercial@gmail.com",
   "@emailAddress": {
     "description": "Endereço de e-mail"
+  },
+  "downloadCV": "Baixar Currículo",
+  "@downloadCV": {
+    "description": "Botão para baixar currículo"
+  },
+  "downloadCVPortuguese": "Currículo em Português",
+  "@downloadCVPortuguese": {
+    "description": "Botão para baixar currículo em português"
+  },
+  "downloadCVEnglish": "Currículo em Inglês",
+  "@downloadCVEnglish": {
+    "description": "Botão para baixar currículo em inglês"
   }
 }

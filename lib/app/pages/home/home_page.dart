@@ -4,6 +4,7 @@ import 'package:portfolio_webapp/app/widgets/experiences_section.dart';
 import 'package:portfolio_webapp/app/widgets/footer.dart';
 import 'package:portfolio_webapp/app/widgets/generic_section.dart';
 import 'package:portfolio_webapp/app/widgets/language_selector.dart';
+import 'package:portfolio_webapp/app/widgets/cv_download_section.dart';
 
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/widgets/drawer_list_tile.dart';
@@ -71,6 +72,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Header(key: _headerKey),
+              const CVDownloadSection(),
               GenericSection(
                 key: _aboutKey,
                 title: l10n.about,
