@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/helpers/language_notifier.dart';
+import 'package:portfolio_webapp/app/pages/home/home_controller.dart';
 import 'app/routes/app_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
@@ -18,8 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => LanguageNotifier()..initialize(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LanguageNotifier()..initialize()),
+        ChangeNotifierProvider(create: (context) => HomeController()),
+      ],
       child: Consumer<LanguageNotifier>(
         builder: (context, languageNotifier, child) {
           return MaterialApp.router(

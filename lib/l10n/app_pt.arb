@@ -123,5 +123,13 @@
   "instagram": "Instagram",
   "@instagram": {
     "description": "Label do Instagram"
+  },
+  "information": "Informações",
+  "@information": {
+    "description": "Tab de informações pessoais"
+  },
+  "projects": "Projetos",
+  "@projects": {
+    "description": "Tab de projetos"
   }
 }
