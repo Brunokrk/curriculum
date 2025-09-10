@@ -69,6 +69,17 @@ class _HomePageState extends State<HomePage> {
                   title: l10n.experiences,
                   onTap: () => homeController.scrollToSection(homeController.experiencesKey, context),
                 ),
+                DrawerListTile(
+                  title: l10n.projects,
+                  onTap: () {
+                    homeController.showProjectsTab();
+                    // Aguarda a UI ser atualizada e faz scroll para o topo
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      homeController.scrollToTop(_scrollController);
+                    });
+                    Navigator.of(context).pop();
+                  },
+                ),
               ],
             ),
           );
