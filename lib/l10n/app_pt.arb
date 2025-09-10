@@ -107,5 +107,21 @@
   "downloadCVEnglish": "Currículo em Inglês",
   "@downloadCVEnglish": {
     "description": "Botão para baixar currículo em inglês"
+  },
+  "contacts": "Contatos",
+  "@contacts": {
+    "description": "Título da seção de contatos"
+  },
+  "github": "GitHub",
+  "@github": {
+    "description": "Label do GitHub"
+  },
+  "linkedin": "LinkedIn",
+  "@linkedin": {
+    "description": "Label do LinkedIn"
+  },
+  "instagram": "Instagram",
+  "@instagram": {
+    "description": "Label do Instagram"
   }
 }

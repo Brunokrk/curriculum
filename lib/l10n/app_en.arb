@@ -26,5 +26,9 @@
   "emailAddress": "piresbrcomercial@gmail.com",
   "downloadCV": "Download CV",
   "downloadCVPortuguese": "CV in Portuguese",
-  "downloadCVEnglish": "CV in English"
+  "downloadCVEnglish": "CV in English",
+  "contacts": "Contacts",
+  "github": "GitHub",
+  "linkedin": "LinkedIn",
+  "instagram": "Instagram"
 }
