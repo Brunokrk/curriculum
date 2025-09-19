@@ -32,5 +32,11 @@
   "linkedin": "LinkedIn",
   "instagram": "Instagram",
   "information": "Information",
-  "projects": "Projects"
+  "projects": "Projects",
+  "totvsPeriod": "Nov 2021 - Jul 2023",
+  "bmptecPeriod": "Jul 2024 - Current",
+  "technologies": "Technologies:",
+  "viewProject": "View Project",
+  "listinTitle": "Listin - Shopping List App",
+  "listinDescription": "Mobile application developed in Flutter for shopping list management. Includes features such as adding products, sorting, product modification and intuitive interface. The main objective of the project was to study and learn some Firebase features, as well as its integration with Flutter apps."
 }

@@ -26,21 +26,21 @@ class CVDownloadSection extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Text(
-                l10n.downloadCV,
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  color: CustomTheme.secondaryColor,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 8),
-              Divider(
-                color: CustomTheme.secondaryColor,
-                thickness: 0.1,
-                indent: isMobile ? 50 : 100,
-                endIndent: isMobile ? 50 : 100,
-              ),
+              // Text(
+              //   l10n.downloadCV,
+              //   style: Theme.of(context).textTheme.displayMedium?.copyWith(
+              //     color: CustomTheme.secondaryColor,
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              //   textAlign: TextAlign.center,
+              // ),
+              //const SizedBox(height: 8),
+              // Divider(
+              //   color: CustomTheme.secondaryColor,
+              //   thickness: 0.1,
+              //   indent: isMobile ? 50 : 100,
+              //   endIndent: isMobile ? 50 : 100,
+              // ),
               const SizedBox(height: 30),
               isMobile ? _buildMobileButtons(context, l10n) : _buildDesktopButtons(context, l10n),
             ],

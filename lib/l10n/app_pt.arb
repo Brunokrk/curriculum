@@ -131,5 +131,29 @@
   "projects": "Projetos",
   "@projects": {
     "description": "Tab de projetos"
+  },
+  "totvsPeriod": "Nov 2021 - Jul 2023",
+  "@totvsPeriod": {
+    "description": "Período de trabalho na TOTVS"
+  },
+  "bmptecPeriod": "Jul 2024 - Atual",
+  "@bmptecPeriod": {
+    "description": "Período de trabalho na BMPTec"
+  },
+  "technologies": "Tecnologias:",
+  "@technologies": {
+    "description": "Label da seção de tecnologias"
+  },
+  "viewProject": "Ver Projeto",
+  "@viewProject": {
+    "description": "Botão para ver projeto ao vivo"
+  },
+  "listinTitle": "Listin - App de Lista de Compras",
+  "@listinTitle": {
+    "description": "Título do projeto Listin"
+  },
+  "listinDescription": "Aplicativo mobile desenvolvido em Flutter para gerenciamento de listas de compras. Inclui funcionalidades como adicionar produtos, ordenação, alteração de produtos e interface intuitiva. O principal objetivo do projeto foi estudar e aprender algumas funcionalidades do firebase, bem como sua integração com apps flutter.",
+  "@listinDescription": {
+    "description": "Descrição do projeto Listin"
   }
 }

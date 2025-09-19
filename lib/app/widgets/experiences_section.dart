@@ -140,12 +140,26 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                   ),
                 ),
                 const SizedBox(height: 4),
-                SelectableText(
-                  experience['company']!,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: CustomTheme.secondaryColor.withOpacity(0.8),
-                    fontWeight: FontWeight.w500,
-                  ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SelectableText(
+                        experience['company']!,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: CustomTheme.secondaryColor.withOpacity(0.8),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    SelectableText(
+                      _getLocalizedPeriod(experience['company']!, l10n),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: CustomTheme.secondaryColor.withOpacity(0.6),
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 12),
                 // Descrição com botão "Ler mais"
@@ -293,6 +307,15 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
       return l10n.totvsContent;
     }
     return content;
+  }
+
+  String _getLocalizedPeriod(String company, AppLocalizations l10n) {
+    if (company.contains('BMPTec')) {
+      return l10n.bmptecPeriod;
+    } else if (company.contains('TOTVS')) {
+      return l10n.totvsPeriod;
+    }
+    return '';
   }
 
 }

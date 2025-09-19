@@ -80,6 +80,7 @@ flutter:
       - assets/images/totvs.png
       - assets/cv/curriculo_pt.pdf
       - assets/cv/curriculo_en.pdf
+      - assets/listin/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

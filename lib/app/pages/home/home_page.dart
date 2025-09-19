@@ -8,6 +8,7 @@ import 'package:portfolio_webapp/app/widgets/generic_section.dart';
 import 'package:portfolio_webapp/app/widgets/language_selector.dart';
 import 'package:portfolio_webapp/app/widgets/cv_download_section.dart';
 import 'package:portfolio_webapp/app/widgets/navigation_bar.dart';
+import 'package:portfolio_webapp/app/widgets/projects_section.dart';
 
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/widgets/drawer_list_tile.dart';
@@ -151,63 +152,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildProjectsHomePage(AppLocalizations l10n) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 900),
-          child: Column(
-            children: [
-              Text(
-                l10n.projects,
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  color: CustomTheme.secondaryColor,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 40),
-              Container(
-                padding: const EdgeInsets.all(40),
-                decoration: BoxDecoration(
-                  color: CustomTheme.secondaryColor.withOpacity(0.05),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: CustomTheme.secondaryColor.withOpacity(0.2),
-                    width: 1,
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.construction,
-                      size: 64,
-                      color: CustomTheme.secondaryColor.withOpacity(0.5),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Em breve...',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: CustomTheme.secondaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Esta seção será atualizada em breve com meus projetos.',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: CustomTheme.secondaryColor.withOpacity(0.7),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+    return const ProjectsSection();
   }
 }
 
