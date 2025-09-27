@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_webapp/app/widgets/image_viewer.dart';
 
 class ProjectImageGallery extends StatefulWidget {
   final List<String> images;
@@ -81,12 +82,15 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
           Expanded(
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 4),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.contain,
-                errorBuilder: (context, error, stackTrace) {
-                  return _buildErrorWidget();
-                },
+              child: GestureDetector(
+                onTap: () => _openImageViewer(context, widget.images.indexOf(imagePath)),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    return _buildErrorWidget();
+                  },
+                ),
               ),
             ),
           ),
@@ -114,17 +118,20 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
               width: double.infinity,
               height: 300,
               child: Center(
-                child: Container(
-                  constraints: const BoxConstraints(
-                    maxWidth: 200,
-                    maxHeight: 300,
-                  ),
-                  child: Image.asset(
-                    imagePath,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) {
-                      return _buildErrorWidget();
-                    },
+                child: GestureDetector(
+                  onTap: () => _openImageViewer(context, index),
+                  child: Container(
+                    constraints: const BoxConstraints(
+                      maxWidth: 200,
+                      maxHeight: 300,
+                    ),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) {
+                        return _buildErrorWidget();
+                      },
+                    ),
                   ),
                 ),
               ),
@@ -282,6 +289,17 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
           size: 20,
         ),
         onPressed: onPressed,
+      ),
+    );
+  }
+
+  void _openImageViewer(BuildContext context, int initialIndex) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ImageViewer(
+          images: widget.images,
+          initialIndex: initialIndex,
+        ),
       ),
     );
   }
