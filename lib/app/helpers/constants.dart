@@ -54,7 +54,7 @@ class Constants {
           'assets/udesc_events/evento1.PNG',
           'assets/udesc_events/evento2.PNG',
           'assets/udesc_events/evento3.PNG',
-          'assets/udesc_events/notificacoes.PNG',
+          'assets/udesc_events/Notificacoes.PNG',
           'assets/udesc_events/configuracao_notificacao.PNG',
           'assets/udesc_events/preferencias.PNG',
         ],
