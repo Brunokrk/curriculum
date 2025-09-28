@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:portfolio_webapp/app/helpers/responsive_helper.dart';
+import 'package:portfolio_webapp/app/helpers/constants.dart';
 import 'package:portfolio_webapp/app/models/project.dart';
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/widgets/project_card.dart';
 
-class ProjectsSection extends StatelessWidget {
+class ProjectsSection extends StatefulWidget {
   const ProjectsSection({super.key});
+
+  @override
+  State<ProjectsSection> createState() => _ProjectsSectionState();
+}
+
+class _ProjectsSectionState extends State<ProjectsSection> {
+  String _searchQuery = '';
+  List<String> _selectedTechnologies = [];
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final bool isMobile = ResponsiveHelper.isMobile(context);
+    final allProjects = Constants.getProjects(l10n);
+    final filteredProjects = _filterProjects(allProjects);
     
     return Container(
       width: double.infinity,
@@ -42,11 +60,19 @@ class ProjectsSection extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               
-              // Lista de projetos
-              ..._getProjects(l10n).map((project) => ProjectCard(
-                project: project,
-                l10n: l10n,
-              )).toList(),
+              // Filtros
+              _buildFiltersSection(context, isMobile, l10n),
+              
+              const SizedBox(height: 30),
+              
+              // Lista de projetos filtrados
+              if (filteredProjects.isEmpty)
+                _buildNoResultsWidget(context)
+              else
+                ...filteredProjects.map((project) => ProjectCard(
+                  project: project,
+                  l10n: l10n,
+                )).toList(),
             ],
           ),
         ),
@@ -55,59 +81,150 @@ class ProjectsSection extends StatelessWidget {
   }
 
 
-  List<Project> _getProjects(AppLocalizations l10n) {
-    return [
-      Project(
-        id: '1',
-        title: l10n.listinTitle,
-        description: l10n.listinDescription,
-        images: const [
-          'assets/listin/login.jpg',
-          'assets/listin/home.jpg',
-          'assets/listin/add_produto.jpg',
-          'assets/listin/add_produto_2.jpg',
-          'assets/listin/altera_produto.jpg',
-          'assets/listin/ordenacao.jpg',
-          'assets/listin/hamburguer.jpg',
+  List<Project> _filterProjects(List<Project> projects) {
+    return projects.where((project) {
+      // Filtro por nome/descrição
+      final matchesSearch = _searchQuery.isEmpty ||
+          project.title.toLowerCase().contains(_searchQuery.toLowerCase()) ||
+          project.description.toLowerCase().contains(_searchQuery.toLowerCase());
+      
+      // Filtro por tecnologias
+      final matchesTechnologies = _selectedTechnologies.isEmpty ||
+          _selectedTechnologies.any((tech) => project.technologies.contains(tech));
+      
+      return matchesSearch && matchesTechnologies;
+    }).toList();
+  }
+
+  Widget _buildFiltersSection(BuildContext context, bool isMobile, AppLocalizations l10n) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
         ],
-        technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
-        status: ProjectStatus.completed,
-        githubUrl: 'https://github.com/Brunokrk/Learning_Firebase_with_Flutter/tree/main',
       ),
-      Project(
-        id: '2',
-        title: l10n.eventsTitle,
-        description: l10n.eventsDescription,
-        images: const [
-          'assets/udesc_events/login.PNG',
-          'assets/udesc_events/feed.PNG',
-          'assets/udesc_events/menu_hamb.PNG',
-          'assets/udesc_events/evento1.PNG',
-          'assets/udesc_events/evento2.PNG',
-          'assets/udesc_events/evento3.PNG',
-          'assets/udesc_events/notificacoes.PNG',
-          'assets/udesc_events/configuracao_notificacao.PNG',
-          'assets/udesc_events/preferencias.PNG',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Campo de busca
+          TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              hintText: 'Buscar projetos...',
+              prefixIcon: const Icon(Icons.search),
+              suffixIcon: _searchQuery.isNotEmpty
+                  ? IconButton(
+                      icon: const Icon(Icons.clear),
+                      onPressed: () {
+                        setState(() {
+                          _searchQuery = '';
+                          _searchController.clear();
+                        });
+                      },
+                    )
+                  : null,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            onChanged: (value) {
+              setState(() {
+                _searchQuery = value;
+              });
+            },
+          ),
+          
+          const SizedBox(height: 16),
+          
+          // Filtros de tecnologia
+          Text(
+            'Filtrar por tecnologia:',
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: Colors.grey[700],
+            ),
+          ),
+          
+          const SizedBox(height: 8),
+          
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: Constants.getAllTechnologies(l10n).map((tech) {
+              final isSelected = _selectedTechnologies.contains(tech);
+              return FilterChip(
+                label: Text(tech),
+                selected: isSelected,
+                onSelected: (selected) {
+                  setState(() {
+                    if (selected) {
+                      _selectedTechnologies.add(tech);
+                    } else {
+                      _selectedTechnologies.remove(tech);
+                    }
+                  });
+                },
+                selectedColor: CustomTheme.secondaryColor.withOpacity(0.2),
+                checkmarkColor: CustomTheme.secondaryColor,
+              );
+            }).toList(),
+          ),
+          
+          // Botão limpar filtros
+          if (_selectedTechnologies.isNotEmpty || _searchQuery.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 16),
+              child: TextButton.icon(
+                onPressed: () {
+                  setState(() {
+                    _searchQuery = '';
+                    _searchController.clear();
+                    _selectedTechnologies.clear();
+                  });
+                },
+                icon: const Icon(Icons.clear_all),
+                label: const Text('Limpar filtros'),
+              ),
+            ),
         ],
-        technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
-        status: ProjectStatus.completed,
-        githubUrl: 'https://github.com/Brunokrk/udesc_events',
       ),
-      Project(
-        id: '3',
-        title: l10n.recipesTitle,
-        description: l10n.recipesDescription,
-        images: const [
-          'assets/recipes/login.jpeg',
-          'assets/recipes/categories.jpeg',
-          'assets/recipes/recipes.jpeg',
-          'assets/recipes/recipe.jpeg',
+    );
+  }
+
+  Widget _buildNoResultsWidget(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(40),
+      child: Column(
+        children: [
+          Icon(
+            Icons.search_off,
+            size: 64,
+            color: Colors.grey[400],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'Nenhum projeto encontrado',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: Colors.grey[600],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Tente ajustar os filtros de busca',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Colors.grey[500],
+            ),
+          ),
         ],
-        technologies: const ['Flutter', 'Dart', 'REST API`s', 'Figma'],
-        status: ProjectStatus.completed,
-        githubUrl: 'https://github.com/Brunokrk/My-Recipes',
       ),
-    ];
+    );
   }
 }
 

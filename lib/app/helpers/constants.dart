@@ -1,9 +1,12 @@
+import 'package:portfolio_webapp/app/models/project.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class Constants {
 
   String aboutSec = "Me chamo Bruno Marchi Pires, tenho 24 anos e atualmente resido na cidade de Florianópolis. Sou formado em Ciência da Computação na Universidade do Estado de Santa Catarina (UDESC). "
   "Aqui, no meu portfólio, você poderá entender melhor minha trajetória acadêmica e profissional, conhecer os projetos nos quais já trabalhei, bem como minhas ambições e objetivos futuros. Estou sempre aberto à comunicação e você pode entrar em contato comigo através de qualquer um dos canais disponíveis aqui!";
 
-  String graduationSec = "Sempre tive grande afinidade com computadores e facilidade com raciocínio lógico, o que me levou a ingressar no curso de bacharelado em Ciência da Computação em 2018. Mesmo sem experiência prévia em programação, o ambiente acadêmico mostrou-se altamente estimulante e desafiador, proporcionando um aprendizado amplo e aprofundado em diversas áreas. Durante minha trajetória acadêmica, adquiri uma base sólida em programação com a linguagem C e evoluí para orientação a objetos com Java. A partir daí, explorei diversas áreas, incluindo análise de dados, algoritmos evolutivos, inteligência artificial e desenvolvimento de jogos com Python. Também tive contato com linguagens funcionais como Haskell, além de explorar frameworks para desenvolvimento Web como Angular e React.  Utilizei alguns bancos de dados relacionais e não-relacionais, como MySQL, PostgreSQL e MongoDB, fora todo escopo que é inerente a um bom curso de computação. Atualmente, dedico-me ao desenvolvimento de soluções mobile com Dart e Flutter. Sempre busquei manter uma visão ampla e versátil na área de tecnologia, testando novos frameworks e linguagens, acreditando que isso facilita o aprendizado contínuo de novas tecnologias e evita a dependência exclusiva de uma única linguagem ou framework na construção de soluções eficazes.";
+  String graduationSec = "Sempre tive grande afinidade com computadores e facilidade com raciocínio lógico, o que me levou a ingressar no curso de bacharelado em Ciência da Computação em 2018. Mesmo sem experiência prévia em programação, o ambiente acadêmico mostrou-se altamente estimulante e desafiador, proporcionando um aprendizado amplo e aprofundado em diversas áreas. Durante minha trajetória acadêmica, adquiri uma base sólida em programação com a linguagem C e evoluí para orientação a objetos com Java. A partir daí, explorei diversas áreas, incluindo análise de dados, algoritmos evolutivos, inteligência artificial e desenvolvimento de jogos com Python. Também tive contato com linguagens funcionais como Haskell, além de explorar frameworks para desenvolvimento Web como Angular e React.  Utilizei alguns bancos de dados relacionais e não-relacionais, como MySQL, PostgreSQL e MongoDB, fora todo escopo que é inerente a um bom curso de computação. Atualmente, dedico-me ao desenvolvimento de soluções mobile com Dart e Flutter. Sempre busquei manter uma visão ampla e versátil na área de tecnologia, testando novos frameworks e linguagens, acreditando que isso facilita o aprendizado contínuo de novas tecnologias e evita a dependência exclusiva de uma única linguagem ou framework na construção de soluções eficazes.";
 
  final List<Map<String, String>> experiences = [
     {
@@ -19,6 +22,74 @@ class Constants {
       'assetPath': 'assets/images/totvs.png',
     },
   ];
+
+  // Dados dos projetos - usando as traduções originais
+  static List<Project> getProjects(AppLocalizations l10n) {
+    return [
+      Project(
+        id: '1',
+        title: l10n.listinTitle,
+        description: l10n.listinDescription,
+        images: const [
+          'assets/listin/login.jpg',
+          'assets/listin/home.jpg',
+          'assets/listin/add_produto.jpg',
+          'assets/listin/add_produto_2.jpg',
+          'assets/listin/altera_produto.jpg',
+          'assets/listin/ordenacao.jpg',
+          'assets/listin/hamburguer.jpg',
+        ],
+        technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
+        status: ProjectStatus.completed,
+        githubUrl: 'https://github.com/Brunokrk/Learning_Firebase_with_Flutter/tree/main',
+      ),
+      Project(
+        id: '2',
+        title: l10n.eventsTitle,
+        description: l10n.eventsDescription,
+        images: const [
+          'assets/udesc_events/login.PNG',
+          'assets/udesc_events/feed.PNG',
+          'assets/udesc_events/menu_hamb.PNG',
+          'assets/udesc_events/evento1.PNG',
+          'assets/udesc_events/evento2.PNG',
+          'assets/udesc_events/evento3.PNG',
+          'assets/udesc_events/notificacoes.PNG',
+          'assets/udesc_events/configuracao_notificacao.PNG',
+          'assets/udesc_events/preferencias.PNG',
+        ],
+        technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
+        status: ProjectStatus.completed,
+        githubUrl: 'https://github.com/Brunokrk/udesc_events',
+      ),
+      Project(
+        id: '3',
+        title: l10n.recipesTitle,
+        description: l10n.recipesDescription,
+        images: const [
+          'assets/recipes/login.jpeg',
+          'assets/recipes/categories.jpeg',
+          'assets/recipes/recipes.jpeg',
+          'assets/recipes/recipe.jpeg',
+        ],
+        technologies: const ['Flutter', 'Dart', 'REST API', 'Figma'],
+        status: ProjectStatus.completed,
+        githubUrl: 'https://github.com/Brunokrk/My-Recipes',
+      ),
+    ];
+  }
+
+  // Lista de todas as tecnologias disponíveis para filtro
+  static List<String> getAllTechnologies(AppLocalizations l10n) {
+    final projects = getProjects(l10n);
+    final Set<String> technologies = {};
+    
+    for (final project in projects) {
+      technologies.addAll(project.technologies);
+    }
+    
+    return technologies.toList()..sort();
+  }
 
 }
 
