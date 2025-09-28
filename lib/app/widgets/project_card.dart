@@ -185,6 +185,15 @@ class ProjectCard extends StatelessWidget {
               onTap: () => _launchUrl(project.githubUrl!),
             ),
           ),
+        if (project.otherUrl != null)
+          Expanded(
+            child: _buildActionButton(
+              context: context,
+              label: 'Link',
+              icon: Icons.link,
+              onTap: () => _launchUrl(project.otherUrl!),
+            ),
+          ),
         if (project.githubUrl != null && project.liveUrl != null)
           const SizedBox(width: 12),
         if (project.liveUrl != null)

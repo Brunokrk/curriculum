@@ -160,7 +160,13 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             children: Constants.getAllTechnologies(l10n).map((tech) {
               final isSelected = _selectedTechnologies.contains(tech);
               return FilterChip(
-                label: Text(tech),
+                label: Text(
+                  tech,
+                  style: TextStyle(
+                    color: isSelected ? Colors.black87 : Colors.grey[700],
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                  ),
+                ),
                 selected: isSelected,
                 onSelected: (selected) {
                   setState(() {
@@ -171,8 +177,13 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                     }
                   });
                 },
-                selectedColor: CustomTheme.secondaryColor.withOpacity(0.2),
+                selectedColor: CustomTheme.primaryColor.withOpacity(0.3),
                 checkmarkColor: CustomTheme.secondaryColor,
+                backgroundColor: Colors.grey[100],
+                side: BorderSide(
+                  color: isSelected ? CustomTheme.primaryColor : Colors.grey[300]!,
+                  width: isSelected ? 2 : 1,
+                ),
               );
             }).toList(),
           ),
@@ -189,8 +200,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                     _selectedTechnologies.clear();
                   });
                 },
-                icon: const Icon(Icons.clear_all),
-                label: const Text('Limpar filtros'),
+                icon: const Icon(Icons.clear_all, color: CustomTheme.secondaryColor,),
+                label: const Text('Limpar filtros', style: TextStyle(color: CustomTheme.secondaryColor),),
+                
               ),
             ),
         ],

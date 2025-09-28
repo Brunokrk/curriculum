@@ -42,5 +42,7 @@
   "eventsTitle": "UDESC EVENTS - Event Management app",
   "eventsDescription": "Mobile application developed in Flutter for managing UDESC events, developed during the 'Human-Computer Interaction' course, applying good UX/UI practices, together with concepts of using Google Firebase.",
   "recipesTitle": "My Recipes - Personal Recipes Management",
-  "recipesDescription": "Mobile application developed in Flutter for managing personal recipes, applying good UX/UI practices, using a local API made with node-js, with the objective of studying communication with WebAPIs, use of images and some architectural concepts."
+  "recipesDescription": "Mobile application developed in Flutter for managing personal recipes, applying good UX/UI practices, using a local API made with node-js, with the objective of studying communication with WebAPIs, use of images and some architectural concepts.",
+  "tccTitle": "Requirements identification via the Lean Startup cycle to connect People with Disabilities to Services",
+  "tccDescription": "This final project for the Bachelor's degree in Computer Science identified the requirements for a potential app to connect people with disabilities to services. The work was presented and published in the proceedings of the 2025 Brazilian Symposium on Collaborative Systems."
 }

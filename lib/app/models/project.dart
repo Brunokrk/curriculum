@@ -5,6 +5,7 @@ class Project {
   final String? imagePath;
   final List<String> images;
   final String? githubUrl;
+  final String? otherUrl;
   final String? liveUrl;
   final List<String> technologies;
   final ProjectStatus status;
@@ -16,6 +17,7 @@ class Project {
     this.imagePath,
     this.images = const [],
     this.githubUrl,
+    this.otherUrl,
     this.liveUrl,
     required this.technologies,
     this.status = ProjectStatus.completed,

@@ -167,6 +167,11 @@
   "recipesDescription": "Aplicativo mobile desenvolvido em Flutter para gerenciamento de receitas pessoais, aplicando boas práticas de UX/UI, utilizando uma API local feita com node-js, com objetivo de estudar a comunicação com WebAPIS, uso de imagens e alguns conceitos de arquitetura.",
   "@recipesDescription": {
     "description": "Descrição do projeto Receitas"
+  },
+  "tccTitle": "Identificação de requisitos via ciclo Lean Startup para conexão de pessoas com deficiência a contratação de serviços gerais.",
+  "@tccTitle":{"description": "Título do projeto de TCC"},
+  "tccDescription": "Projeto de conclusão do curso de Bacharelado em Ciência da Computação, identificando requisitos de um possível app para conectar pessoas com deficiência a serviços. O trabalho foi apresentado e publicado nos anais do Simpósio Brasileiro de Sistemas Colaborativos de 2025.",
+  "@tccDescription": {
+    "description": "Descrição do projeto de TCC"
   }
-  
 }

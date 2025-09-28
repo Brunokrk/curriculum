@@ -76,6 +76,21 @@ class Constants {
         status: ProjectStatus.completed,
         githubUrl: 'https://github.com/Brunokrk/My-Recipes',
       ),
+      Project(
+        id: '4',
+        title: l10n.tccTitle,
+        description: l10n.tccDescription,
+        images: const [
+          'assets/tcc/login.png',
+          'assets/tcc/criacao_conta.png',
+          'assets/tcc/login2.png',
+          'assets/tcc/home.png',
+          'assets/tcc/servico.png',
+        ],
+        technologies: const ['LaTeX', 'Lean Startup', "Figma"],
+        status: ProjectStatus.completed,
+        otherUrl:'https://sol.sbc.org.br/index.php/sbsc/issue/view/1524',
+      ),
     ];
   }
 
