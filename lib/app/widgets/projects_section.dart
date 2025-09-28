@@ -54,6 +54,7 @@ class ProjectsSection extends StatelessWidget {
     );
   }
 
+
   List<Project> _getProjects(AppLocalizations l10n) {
     return [
       Project(
@@ -72,6 +73,39 @@ class ProjectsSection extends StatelessWidget {
         technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
         status: ProjectStatus.completed,
         githubUrl: 'https://github.com/Brunokrk/Learning_Firebase_with_Flutter/tree/main',
+      ),
+      Project(
+        id: '2',
+        title: l10n.eventsTitle,
+        description: l10n.eventsDescription,
+        images: const [
+          'assets/udesc_events/login.PNG',
+          'assets/udesc_events/feed.PNG',
+          'assets/udesc_events/menu_hamb.PNG',
+          'assets/udesc_events/evento1.PNG',
+          'assets/udesc_events/evento2.PNG',
+          'assets/udesc_events/evento3.PNG',
+          'assets/udesc_events/notificacoes.PNG',
+          'assets/udesc_events/configuracao_notificacao.PNG',
+          'assets/udesc_events/preferencias.PNG',
+        ],
+        technologies: const ['Flutter', 'Dart', 'Firebase', 'Figma'],
+        status: ProjectStatus.completed,
+        githubUrl: 'https://github.com/Brunokrk/udesc_events',
+      ),
+      Project(
+        id: '3',
+        title: l10n.recipesTitle,
+        description: l10n.recipesDescription,
+        images: const [
+          'assets/recipes/login.jpeg',
+          'assets/recipes/categories.jpeg',
+          'assets/recipes/recipes.jpeg',
+          'assets/recipes/recipe.jpeg',
+        ],
+        technologies: const ['Flutter', 'Dart', 'REST API`s', 'Figma'],
+        status: ProjectStatus.completed,
+        githubUrl: 'https://github.com/Brunokrk/My-Recipes',
       ),
     ];
   }

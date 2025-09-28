@@ -155,5 +155,18 @@
   "listinDescription": "Aplicativo mobile desenvolvido em Flutter para gerenciamento de listas de compras. Inclui funcionalidades como adicionar produtos, ordenação, alteração de produtos e interface intuitiva. O principal objetivo do projeto foi estudar e aprender algumas funcionalidades do firebase, bem como sua integração com apps flutter.",
   "@listinDescription": {
     "description": "Descrição do projeto Listin"
+  },
+  "eventsTitle": "Eventos Udesc - App de eventos para UDESC",
+  "@eventsTitle":{"description": "Título do projeto Eventos Udesc"},
+  "eventsDescription": "Aplicativo mobile desenvolvido em Flutter para gerenciamento dos eventos da UDESC, desenvolvido durante disciplina de 'Interação Humano-Computador', aplicando boas práticas de UX/UI, juntamente com conceitos de uso do Google Firebase.",
+  "@eventsDescription": {
+    "description": "Descrição do projeto Eventos"
+  },
+  "recipesTitle": "My Recipes - App de receitas pessoais",
+  "@recipesTitle":{"description": "Título do projeto Receitas"},
+  "recipesDescription": "Aplicativo mobile desenvolvido em Flutter para gerenciamento de receitas pessoais, aplicando boas práticas de UX/UI, utilizando uma API local feita com node-js, com objetivo de estudar a comunicação com WebAPIS, uso de imagens e alguns conceitos de arquitetura.",
+  "@recipesDescription": {
+    "description": "Descrição do projeto Receitas"
   }
+  
 }

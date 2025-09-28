@@ -38,5 +38,9 @@
   "technologies": "Technologies:",
   "viewProject": "View Project",
   "listinTitle": "Listin - Shopping List App",
-  "listinDescription": "Mobile application developed in Flutter for shopping list management. Includes features such as adding products, sorting, product modification and intuitive interface. The main objective of the project was to study and learn some Firebase features, as well as its integration with Flutter apps."
+  "listinDescription": "Mobile application developed in Flutter for shopping list management. Includes features such as adding products, sorting, product modification and intuitive interface. The main objective of the project was to study and learn some Firebase features, as well as its integration with Flutter apps.",
+  "eventsTitle": "UDESC EVENTS - Event Management app",
+  "eventsDescription": "Mobile application developed in Flutter for managing UDESC events, developed during the 'Human-Computer Interaction' course, applying good UX/UI practices, together with concepts of using Google Firebase.",
+  "recipesTitle": "My Recipes - Personal Recipes Management",
+  "recipesDescription": "Mobile application developed in Flutter for managing personal recipes, applying good UX/UI practices, using a local API made with node-js, with the objective of studying communication with WebAPIs, use of images and some architectural concepts."
 }

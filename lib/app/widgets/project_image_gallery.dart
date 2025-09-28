@@ -100,9 +100,11 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
   }
 
   Widget _buildCarouselView(BuildContext context) {
+    final imagesPerRow = _getImagesPerRow(context);
+    final totalPages = (widget.images.length / imagesPerRow).ceil();
+    
     return Stack(
       children: [
-      
         PageView.builder(
           controller: _pageController,
           onPageChanged: (index) {
@@ -110,40 +112,44 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
               _currentIndex = index;
             });
           },
-          itemCount: widget.images.length,
-          itemBuilder: (context, index) {
-            final imagePath = widget.images[index];
+          itemCount: totalPages,
+          itemBuilder: (context, pageIndex) {
+            final startIndex = pageIndex * imagesPerRow;
+            final endIndex = (startIndex + imagesPerRow).clamp(0, widget.images.length);
+            final pageImages = widget.images.sublist(startIndex, endIndex);
             
-            return Container(
-              width: double.infinity,
-              height: 300,
-              child: Center(
-                child: GestureDetector(
-                  onTap: () => _openImageViewer(context, index),
-                  child: Container(
-                    constraints: const BoxConstraints(
-                      maxWidth: 200,
-                      maxHeight: 300,
+            return Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: pageImages.map((imagePath) {
+                  final imageIndex = widget.images.indexOf(imagePath);
+                  return Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      child: GestureDetector(
+                        onTap: () => _openImageViewer(context, imageIndex),
+                        child: Image.asset(
+                          imagePath,
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) {
+                            return _buildErrorWidget();
+                          },
+                        ),
+                      ),
                     ),
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) {
-                        return _buildErrorWidget();
-                      },
-                    ),
-                  ),
-                ),
+                  );
+                }).toList(),
               ),
             );
           },
         ),
         
         // Indicadores de página
-        if (widget.images.length > 1) _buildPageIndicators(),
+        if (totalPages > 1) _buildPageIndicators(totalPages),
         
         // Botões de navegação
-        if (widget.images.length > 1) _buildNavigationButtons(),
+        if (totalPages > 1) _buildNavigationButtons(totalPages),
       ],
     );
   }
@@ -186,7 +192,7 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
     );
   }
 
-  Widget _buildPageIndicators() {
+  Widget _buildPageIndicators(int totalPages) {
     return Positioned(
       bottom: 12,
       left: 0,
@@ -194,7 +200,7 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
-          widget.images.length,
+          totalPages,
           (index) => Container(
             margin: const EdgeInsets.symmetric(horizontal: 4),
             width: 8,
@@ -211,7 +217,7 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
     );
   }
 
-  Widget _buildNavigationButtons() {
+  Widget _buildNavigationButtons(int totalPages) {
     return Stack(
       children: [
         // Botão anterior (esquerda)
@@ -243,8 +249,8 @@ class _ProjectImageGalleryState extends State<ProjectImageGallery> {
           child: Center(
             child: _buildNavigationButton(
               icon: Icons.chevron_right,
-              isEnabled: _currentIndex < widget.images.length - 1,
-              onPressed: _currentIndex < widget.images.length - 1
+              isEnabled: _currentIndex < totalPages - 1,
+              onPressed: _currentIndex < totalPages - 1
                   ? () {
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
