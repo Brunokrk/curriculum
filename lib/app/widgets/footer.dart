@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio_webapp/l10n/app_localizations.dart';
 import 'package:portfolio_webapp/app/helpers/responsive_helper.dart';
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,7 +20,8 @@ class Footer extends StatelessWidget {
           constraints: BoxConstraints(
             maxWidth: isMobile ? 400 : 900,
           ),
-          child: isMobile ? _buildMobile(context, l10n) : _buildWeb(context, l10n),
+          child:
+              isMobile ? _buildMobile(context, l10n) : _buildWeb(context, l10n),
         ),
       ),
     );
@@ -33,9 +34,9 @@ class Footer extends StatelessWidget {
         SelectableText(
           l10n.developedBy,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: CustomTheme.primaryColor,
-            fontWeight: FontWeight.w500,
-          ),
+                color: CustomTheme.primaryColor,
+                fontWeight: FontWeight.w500,
+              ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 24),
@@ -54,9 +55,9 @@ class Footer extends StatelessWidget {
           child: SelectableText(
             l10n.developedBy,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: CustomTheme.primaryColor,
-              fontWeight: FontWeight.w500,
-            ),
+                  color: CustomTheme.primaryColor,
+                  fontWeight: FontWeight.w500,
+                ),
           ),
         ),
         Expanded(
@@ -67,7 +68,8 @@ class Footer extends StatelessWidget {
     );
   }
 
-  Widget _buildContactCard(BuildContext context, AppLocalizations l10n, bool isMobile) {
+  Widget _buildContactCard(
+      BuildContext context, AppLocalizations l10n, bool isMobile) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -93,10 +95,12 @@ class Footer extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+        crossAxisAlignment:
+            isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
+            mainAxisAlignment:
+                isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
             children: [
               Icon(
                 Icons.contact_page,
@@ -107,19 +111,19 @@ class Footer extends StatelessWidget {
               Text(
                 l10n.contacts,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: CustomTheme.primaryColor,
-                  fontWeight: FontWeight.bold,
-                ),
+                      color: CustomTheme.primaryColor,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ],
           ),
           const SizedBox(height: 16),
-          
+
           // Seção de Contato Direto
           _buildContactSection(context, l10n, isMobile),
-          
+
           const SizedBox(height: 16),
-          
+
           // Divisor
           Container(
             height: 1,
@@ -133,9 +137,9 @@ class Footer extends StatelessWidget {
               ),
             ),
           ),
-          
+
           const SizedBox(height: 16),
-          
+
           // Seção de Redes Sociais
           _buildSocialSection(context, l10n, isMobile),
         ],
@@ -143,9 +147,11 @@ class Footer extends StatelessWidget {
     );
   }
 
-  Widget _buildContactSection(BuildContext context, AppLocalizations l10n, bool isMobile) {
+  Widget _buildContactSection(
+      BuildContext context, AppLocalizations l10n, bool isMobile) {
     return Column(
-      crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      crossAxisAlignment:
+          isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         _buildContactItem(
           context,
@@ -175,7 +181,8 @@ class Footer extends StatelessWidget {
   ) {
     return Row(
       mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
+      mainAxisAlignment:
+          isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
       children: [
         Container(
           padding: const EdgeInsets.all(6),
@@ -192,23 +199,24 @@ class Footer extends StatelessWidget {
         const SizedBox(width: 12),
         Flexible(
           child: Column(
-            crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+            crossAxisAlignment:
+                isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
             children: [
               Text(
                 label,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: CustomTheme.primaryColor.withOpacity(0.7),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
-                ),
+                      color: CustomTheme.primaryColor.withOpacity(0.7),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                    ),
               ),
               const SizedBox(height: 2),
               SelectableText(
                 value,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: CustomTheme.primaryColor,
-                  fontWeight: FontWeight.w600,
-                ),
+                      color: CustomTheme.primaryColor,
+                      fontWeight: FontWeight.w600,
+                    ),
               ),
             ],
           ),
@@ -217,17 +225,19 @@ class Footer extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialSection(BuildContext context, AppLocalizations l10n, bool isMobile) {
+  Widget _buildSocialSection(
+      BuildContext context, AppLocalizations l10n, bool isMobile) {
     return Column(
-      crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      crossAxisAlignment:
+          isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         Text(
           'Redes Sociais',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: CustomTheme.primaryColor.withOpacity(0.8),
-            fontWeight: FontWeight.w600,
-            fontSize: 12,
-          ),
+                color: CustomTheme.primaryColor.withOpacity(0.8),
+                fontWeight: FontWeight.w600,
+                fontSize: 12,
+              ),
         ),
         const SizedBox(height: 12),
         Wrap(
@@ -290,10 +300,10 @@ class Footer extends StatelessWidget {
             Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: CustomTheme.primaryColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-              ),
+                    color: CustomTheme.primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                  ),
             ),
           ],
         ),

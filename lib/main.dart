@@ -5,7 +5,7 @@ import 'package:portfolio_webapp/app/theme/custom_theme.dart';
 import 'package:portfolio_webapp/app/helpers/language_notifier.dart';
 import 'package:portfolio_webapp/app/pages/home/home_controller.dart';
 import 'app/routes/app_router.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio_webapp/l10n/app_localizations.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() async {

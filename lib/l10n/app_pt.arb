@@ -136,9 +136,21 @@
   "@totvsPeriod": {
     "description": "Período de trabalho na TOTVS"
   },
-  "bmptecPeriod": "Jul 2024 - Atual",
+  "bmptecPeriod": "Jul 2024 - Out 2025",
   "@bmptecPeriod": {
     "description": "Período de trabalho na BMPTec"
+  },
+  "accenturePosition": "Analista de Engenharia de Produtos Pleno",
+  "@accenturePosition": {
+    "description": "Cargo na Accenture"
+  },
+  "accentureContent": "Trabalhando com flutter, participei ativamente de alguns times, sendo o principal o time de sustentação atuando na manutenção e desenvolvimento de funcionalidades para o aplicativo VIVOMAIS, app da telefônica utilizado pelos vendedores nas lojas físicas da operadora. Também atuei junto ao time de arquitetura, utilizando de minha experiência em contextos modularizados para propor soluções para novos desenvolvimentos dentro do aplicativo.",
+  "@accentureContent": {
+    "description": "Conteúdo da experiência na Accenture"
+  },
+  "accenturePeriod": "Out 2025 - Atual",
+  "@accenturePeriod": {
+    "description": "Período de trabalho na Accenture"
   },
   "technologies": "Tecnologias:",
   "@technologies": {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio_webapp/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:portfolio_webapp/app/pages/home/home_controller.dart';
 import 'package:portfolio_webapp/app/widgets/experiences_section.dart';
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CustomTheme.primaryColor,
@@ -55,20 +55,24 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 DrawerListTile(
-                  title: l10n.home, 
-                  onTap: () => homeController.scrollToSection(homeController.headerKey, context),
+                  title: l10n.home,
+                  onTap: () => homeController.scrollToSection(
+                      homeController.headerKey, context),
                 ),
                 DrawerListTile(
-                  title: l10n.about, 
-                  onTap: () => homeController.scrollToSection(homeController.aboutKey, context),
+                  title: l10n.about,
+                  onTap: () => homeController.scrollToSection(
+                      homeController.aboutKey, context),
                 ),
                 DrawerListTile(
                   title: l10n.graduation,
-                  onTap: () => homeController.scrollToSection(homeController.graduationKey, context),
+                  onTap: () => homeController.scrollToSection(
+                      homeController.graduationKey, context),
                 ),
                 DrawerListTile(
                   title: l10n.experiences,
-                  onTap: () => homeController.scrollToSection(homeController.experiencesKey, context),
+                  onTap: () => homeController.scrollToSection(
+                      homeController.experiencesKey, context),
                 ),
                 DrawerListTile(
                   title: l10n.projects,
@@ -106,8 +110,8 @@ class _HomePageState extends State<HomePage> {
                 // Conteúdo das tabs
                 SliverToBoxAdapter(
                   child: homeController.isInformationTab
-                    ? _buildPersonalHomePage(l10n, homeController)
-                    : _buildProjectsHomePage(l10n),
+                      ? _buildPersonalHomePage(l10n, homeController)
+                      : _buildProjectsHomePage(l10n),
                 ),
                 // Footer
                 SliverToBoxAdapter(
@@ -121,8 +125,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
-  Widget _buildPersonalHomePage(AppLocalizations l10n, HomeController homeController) {
+  Widget _buildPersonalHomePage(
+      AppLocalizations l10n, HomeController homeController) {
     return Column(
       children: [
         CVDownloadSection(),
@@ -168,7 +172,8 @@ class _NavigationBarDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => 50;
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       color: CustomTheme.secondaryColor,
       child: child,
@@ -180,4 +185,3 @@ class _NavigationBarDelegate extends SliverPersistentHeaderDelegate {
     return false;
   }
 }
-

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio_webapp/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:portfolio_webapp/app/pages/home/home_controller.dart';
 import 'package:portfolio_webapp/app/helpers/responsive_helper.dart';
@@ -12,7 +12,7 @@ class CustomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isMobile = ResponsiveHelper.isMobile(context);
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Container(
       width: double.infinity,
       // padding: EdgeInsets.symmetric(
@@ -26,9 +26,9 @@ class CustomNavigationBar extends StatelessWidget {
           ),
           child: Consumer<HomeController>(
             builder: (context, homeController, child) {
-              return isMobile 
-                ? _buildMobileNavigation(context, l10n, homeController)
-                : _buildWebNavigation(context, l10n, homeController);
+              return isMobile
+                  ? _buildMobileNavigation(context, l10n, homeController)
+                  : _buildWebNavigation(context, l10n, homeController);
             },
           ),
         ),
@@ -36,11 +36,8 @@ class CustomNavigationBar extends StatelessWidget {
     );
   }
 
-  Widget _buildMobileNavigation(
-    BuildContext context, 
-    AppLocalizations l10n, 
-    HomeController homeController
-  ) {
+  Widget _buildMobileNavigation(BuildContext context, AppLocalizations l10n,
+      HomeController homeController) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -62,11 +59,8 @@ class CustomNavigationBar extends StatelessWidget {
     );
   }
 
-  Widget _buildWebNavigation(
-    BuildContext context, 
-    AppLocalizations l10n, 
-    HomeController homeController
-  ) {
+  Widget _buildWebNavigation(BuildContext context, AppLocalizations l10n,
+      HomeController homeController) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -103,23 +97,25 @@ class CustomNavigationBar extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(8),
         child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
           decoration: BoxDecoration(
-            color: isSelected 
-              ? CustomTheme.primaryColor.withOpacity(0.1)
-              : Colors.transparent,
+            color: isSelected
+                ? CustomTheme.primaryColor.withOpacity(0.1)
+                : Colors.transparent,
             borderRadius: BorderRadius.circular(8),
           ),
           child: AnimatedDefaultTextStyle(
             duration: const Duration(milliseconds: 200),
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: isSelected 
-                ? CustomTheme.primaryColor
-                : CustomTheme.primaryColor.withOpacity(0.7),
-              fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-              fontSize: 16,
-              letterSpacing: 0.5,
-            ) ?? const TextStyle(),
+                      color: isSelected
+                          ? CustomTheme.primaryColor
+                          : CustomTheme.primaryColor.withOpacity(0.7),
+                      fontWeight:
+                          isSelected ? FontWeight.w600 : FontWeight.w500,
+                      fontSize: 16,
+                      letterSpacing: 0.5,
+                    ) ??
+                const TextStyle(),
             child: Text(label),
           ),
         ),

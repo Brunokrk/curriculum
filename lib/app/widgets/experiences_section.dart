@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio_webapp/l10n/app_localizations.dart';
 import 'package:portfolio_webapp/app/helpers/constants.dart';
 import 'package:portfolio_webapp/app/helpers/responsive_helper.dart';
 import 'package:portfolio_webapp/app/theme/custom_theme.dart';
@@ -15,7 +15,7 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
   final Map<int, bool> _expandedStates = {};
 
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     bool isMobile = ResponsiveHelper.isMobile(context);
     return Container(
@@ -27,7 +27,8 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
           constraints: BoxConstraints(
             maxWidth: isMobile ? 400 : 900,
           ),
-          child: isMobile ? _buildMobile(context, l10n) : _buildWeb(context, l10n),
+          child:
+              isMobile ? _buildMobile(context, l10n) : _buildWeb(context, l10n),
         ),
       ),
     );
@@ -90,14 +91,15 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
     );
   }
 
-  Widget _buildExperienceItem(BuildContext context, Map<String, String> experience, int index, AppLocalizations l10n) {
+  Widget _buildExperienceItem(BuildContext context,
+      Map<String, String> experience, int index, AppLocalizations l10n) {
     final isMobile = ResponsiveHelper.isMobile(context);
     final isExpanded = _expandedStates[index] ?? false;
     final content = experience['content']!;
-    
+
     // Determina se o texto é longo o suficiente para precisar do botão "Ler mais"
     final needsReadMore = content.length > 500;
-    
+
     return Container(
       margin: EdgeInsets.only(
         bottom: index < Constants().experiences.length - 1 ? 40 : 0,
@@ -135,9 +137,9 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                 SelectableText(
                   _getLocalizedPosition(experience['position']!, l10n),
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: CustomTheme.secondaryColor,
-                  ),
+                        fontWeight: FontWeight.bold,
+                        color: CustomTheme.secondaryColor,
+                      ),
                 ),
                 const SizedBox(height: 4),
                 Row(
@@ -145,25 +147,36 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                     Expanded(
                       child: SelectableText(
                         experience['company']!,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: CustomTheme.secondaryColor.withOpacity(0.8),
-                          fontWeight: FontWeight.w500,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(
+                              color:
+                                  CustomTheme.secondaryColor.withOpacity(0.8),
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
                     ),
                     SelectableText(
                       _getLocalizedPeriod(experience['company']!, l10n),
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: CustomTheme.secondaryColor.withOpacity(0.6),
-                        fontWeight: FontWeight.w500,
-                        fontStyle: FontStyle.italic,
-                      ),
+                            color: CustomTheme.secondaryColor.withOpacity(0.6),
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.italic,
+                          ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 12),
                 // Descrição com botão "Ler mais"
-                _buildExpandableText(context, _getLocalizedContent(experience['content']!, l10n), index, isExpanded, needsReadMore, isMobile, l10n),
+                _buildExpandableText(
+                    context,
+                    _getLocalizedContent(experience['content']!, l10n),
+                    index,
+                    isExpanded,
+                    needsReadMore,
+                    isMobile,
+                    l10n),
               ],
             ),
           ),
@@ -172,19 +185,27 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
     );
   }
 
-  Widget _buildExpandableText(BuildContext context, String content, int index, bool isExpanded, bool needsReadMore, bool isMobile, AppLocalizations l10n) {
+  Widget _buildExpandableText(
+      BuildContext context,
+      String content,
+      int index,
+      bool isExpanded,
+      bool needsReadMore,
+      bool isMobile,
+      AppLocalizations l10n) {
     if (!needsReadMore) {
       return SelectableText(
         content,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-          height: 1.6,
-          fontSize: isMobile ? 14 : 16,
-        ),
+              height: 1.6,
+              fontSize: isMobile ? 14 : 16,
+            ),
       );
     }
 
-    final displayText = isExpanded ? content : content.substring(0, 500) + '...';
-    
+    final displayText =
+        isExpanded ? content : content.substring(0, 500) + '...';
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -193,9 +214,9 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
             SelectableText(
               displayText,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                height: 1.6,
-                fontSize: isMobile ? 14 : 16,
-              ),
+                    height: 1.6,
+                    fontSize: isMobile ? 14 : 16,
+                  ),
             ),
             if (!isExpanded)
               Positioned(
@@ -227,7 +248,8 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                       },
                       child: Container(
                         margin: const EdgeInsets.only(bottom: 8),
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(25),
@@ -241,10 +263,11 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                         ),
                         child: Text(
                           l10n.readMore,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: CustomTheme.secondaryColor,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: CustomTheme.secondaryColor,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                         ),
                       ),
                     ),
@@ -264,7 +287,8 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                   });
                 },
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(25),
@@ -279,9 +303,9 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
                   child: Text(
                     l10n.readLess,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: CustomTheme.secondaryColor,
-                      fontWeight: FontWeight.w600,
-                    ),
+                          color: CustomTheme.secondaryColor,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                 ),
               ),
@@ -292,7 +316,11 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
   }
 
   String _getLocalizedPosition(String position, AppLocalizations l10n) {
-    if (position.contains('BMPTec') || position.contains('Desenvolvedor de Software Mobile')) {
+    if (position.contains('Accenture') ||
+        position.contains('Analista de Engenharia de Produtos')) {
+      return l10n.accenturePosition;
+    } else if (position.contains('BMPTec') ||
+        position.contains('Desenvolvedor de Software Mobile')) {
       return l10n.bmptecPosition;
     } else if (position.contains('TOTVS') || position.contains('Estagiário')) {
       return l10n.totvsPosition;
@@ -301,7 +329,9 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
   }
 
   String _getLocalizedContent(String content, AppLocalizations l10n) {
-    if (content.contains('BMPTec') || content.contains('white label')) {
+    if (content.contains('Accenture') || content.contains('modularizado')) {
+      return l10n.accentureContent;
+    } else if (content.contains('BMPTec') || content.contains('white label')) {
       return l10n.bmptecContent;
     } else if (content.contains('TOTVS') || content.contains('internacional')) {
       return l10n.totvsContent;
@@ -310,12 +340,13 @@ class _ExperiencesSectionState extends State<ExperiencesSection> {
   }
 
   String _getLocalizedPeriod(String company, AppLocalizations l10n) {
-    if (company.contains('BMPTec')) {
+    if (company.contains('Accenture')) {
+      return l10n.accenturePeriod;
+    } else if (company.contains('BMPTec')) {
       return l10n.bmptecPeriod;
     } else if (company.contains('TOTVS')) {
       return l10n.totvsPeriod;
     }
     return '';
   }
-
 }
